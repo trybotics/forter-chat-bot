@@ -33,8 +33,8 @@ export class ChatRoomlement extends LitElement {
       if (name) {
         this.user.name = name;
       }
-      this.chats = data.chats;
       if (data.chats.length) {
+        this.chats = data.chats;
         this.questionId = data.chats[data.chats.length - 1].questionId;
       }
       this.socket.emit("newUser", this.user);

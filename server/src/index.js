@@ -83,8 +83,17 @@ io.on("connection", async (socket) => {
       });
       if (foundQuestion) {
         const { _id } = await create("questions", {
-          data,
-          answers: foundQuestion._source.answers,
+          ...data,
+          answers: foundQuestion._source.answers.map((answer) => {
+            return {
+              ...answer,
+              id: "",
+              name: "Bot",
+              image:
+                "https://img.freepik.com/vetores-premium/robo-com-fone-de-ouvido-chat-bot-ai-inteligencia-artificial-secretaria-eletronica-call-center-centro-de-atendimento-linha-direta-servico-de-suporte-ao-operador-metaverso-de-tecnologias-fundo-roxo-olhos-azuis_774778-486.jpg",
+              time: getCurrentTime(),
+            };
+          }),
         });
         data.questionId = _id;
         socket.broadcast.emit("newMessage", data);
@@ -100,7 +109,7 @@ io.on("connection", async (socket) => {
           });
         });
       } else {
-        const { _id } = await create("questions", data);
+        const { _id } = await create("questions", { ...data, answers: [] });
         data.questionId = _id;
         socket.broadcast.emit("newMessage", data);
       }
