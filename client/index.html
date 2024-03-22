@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Type"
+      content="text/html;charset=UTF-8"
+      charset="UTF-8"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta
+      name="description"
+      content="A chat application where each user can post questions & answers in a chat room."
+    />
+    <meta name="keywords" content="Chat Bot" />
+    <meta name="author" content="Chat Bot" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#2196f3" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#2196f3" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2196f3" />
+    <link
+      rel="shortcut icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn3BNDgMACkamsIHppW8mmlOei8VyEDF2_PIoBD_Q3NeaoERpnfw"
+    />
+    <title>Forter Challenge: Chat Bot</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Rubik", sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        background: #fafafa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+      body::before,
+      body::after {
+        content: "";
+        height: 90vh;
+        width: 33%;
+        position: absolute;
+        z-index: -10;
+      }
+      body::before {
+        top: 0;
+        left: -5rem;
+        background: linear-gradient(to right, #b63eff, #c640ff);
+        border-radius: 0 0 16rem 16rem;
+      }
+      body::after {
+        bottom: 0;
+        right: -5rem;
+        background: #8080800d;
+        border-radius: 16rem 16rem 0 0;
+      }
+
+      @media only screen and (max-width: 600px) {
+        body::before {
+          width: 16rem;
+          height: 30rem;
+        }
+        body::after {
+          width: 16rem;
+          height: 30rem;
+        }
+      }
+      @media only screen and (max-width: 425px) {
+        body::before {
+          display: none;
+        }
+        body::after {
+          display: none;
+        }
+      }
+    </style>
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <chat-room-element></chat-room-element>
+  </body>
+</html>
