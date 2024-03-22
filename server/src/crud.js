@@ -1,5 +1,12 @@
 import { Client } from "@elastic/elasticsearch";
-const client = new Client({ node: "http://localhost:9200" });
+
+const client = new Client({ 
+  cloud: { id: process.env.ELASTICCLOUDID }, 
+  auth: { 
+      username: process.env.ELASTICUSERNAME,
+      password: process.env.ELASTICPASSWORD
+  }
+});
 
 export const phraseSearch = async (_index, phrase) => {
   const hits = [];

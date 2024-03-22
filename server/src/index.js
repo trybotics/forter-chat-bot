@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import httpServer from "http";
 import { Server } from "socket.io";
 import cors from "cors";
-
+import 'dotenv/config'
 import {
   phraseSearch,
   getAll,
@@ -13,6 +13,8 @@ import {
   create,
   deleteQuestion,
 } from "./crud.js";
+
+
 
 const app = express();
 
@@ -25,8 +27,8 @@ app.use(
 );
 const http = httpServer.createServer(app);
 
-http.listen(3000, () => {
-  console.log("listening on *:3000");
+http.listen(process.env.PORT, () => {
+  console.log(`listening on *:${process.env.PORT}`);
 });
 
 const io = new Server(http, {
@@ -65,7 +67,7 @@ io.on("connection", async (socket) => {
     });
   }
   socket.on("newUser", async (data) => {
-    clients.push({ id: socket.id, ...data });
+    clients.push({ socketId: socket.id, ...data });
     io.emit("onlineClients", clients);
   });
   socket.on("newMessage", async (data) => {
@@ -117,7 +119,7 @@ io.on("connection", async (socket) => {
   });
   socket.on("disconnect", () => {
     console.log("Client disconnected", socket.id);
-    clients = clients.filter((client) => client.id !== socket.id);
+    clients = clients.filter((client) => client.socketId !== socket.id);
     io.emit("onlineClients", clients);
   });
 });
