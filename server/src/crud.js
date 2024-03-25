@@ -1,11 +1,11 @@
 import { Client } from "@elastic/elasticsearch";
 
-const client = new Client({ 
-  cloud: { id: process.env.ELASTICCLOUDID }, 
-  auth: { 
-      username: process.env.ELASTICUSERNAME,
-      password: process.env.ELASTICPASSWORD
-  }
+const client = new Client({
+  cloud: { id: process.env.ELASTICCLOUDID },
+  auth: {
+    username: process.env.ELASTICUSERNAME,
+    password: process.env.ELASTICPASSWORD,
+  },
 });
 
 export const phraseSearch = async (_index, phrase) => {
@@ -54,6 +54,7 @@ export const getAll = async (index) => {
     .search({
       index: index,
       body: {
+        size: 100,
         query: {
           match_all: {},
         },
