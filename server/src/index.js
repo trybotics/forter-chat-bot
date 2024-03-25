@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import httpServer from "http";
 import { Server } from "socket.io";
 import cors from "cors";
-import 'dotenv/config'
+import "dotenv/config";
 import {
   phraseSearch,
   getAll,
@@ -13,8 +13,6 @@ import {
   create,
   deleteQuestion,
 } from "./crud.js";
-
-
 
 const app = express();
 
@@ -48,7 +46,7 @@ io.on("connection", async (socket) => {
     id: clientsCount,
     chats: hits.map((hit) => {
       return { questionId: hit._id, ...hit._source };
-    }),
+    }).sort(sortByUTCTime),
   });
   if (!hits.length) {
     let botTexts = [
@@ -168,16 +166,12 @@ app.delete("/questions/:id", async (req, res) => {
 });
 
 function getCurrentTime() {
-  const now = new Date();
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  const meridiem = hours >= 12 ? "PM" : "AM";
+  return new Date().toUTCString();
+}
 
-  // Convert hours to 12-hour format
-  hours = hours % 12 || 12;
-
-  // Add leading zeros to minutes if needed
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-
-  return `${hours}:${minutes} ${meridiem}`;
+// Function to convert to Date objects and sort
+function sortByUTCTime(a, b) {
+  const timeA = new Date(a.time);
+  const timeB = new Date(b.time);
+  return timeA - timeB;
 }

@@ -73,7 +73,7 @@ export class ChatRoomlement extends LitElement {
         questionId: this.questionId,
         ...this.user,
         text,
-        time: this.getCurrentTime(),
+        time: new Date().toUTCString(),
       };
       this.socket.emit("newMessage", newChat);
       this.updateChat(newChat);
@@ -101,19 +101,13 @@ export class ChatRoomlement extends LitElement {
     }, 500);
   }
 
-  getCurrentTime() {
-    const now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    const meridiem = hours >= 12 ? "PM" : "AM";
-
-    // Convert hours to 12-hour format
-    hours = hours % 12 || 12;
-
-    // Add leading zeros to minutes if needed
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-
-    return `${hours}:${minutes} ${meridiem}`;
+  getFormattedTime(timeUTC) {
+    const localTime = new Date(timeUTC).toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+    return localTime;
   }
 
   isQuestion(statement) {
@@ -191,7 +185,7 @@ export class ChatRoomlement extends LitElement {
                   name=${chat.name}
                   image=${chat.image}
                   text=${chat.text}
-                  time=${chat.time}
+                  time=${this.getFormattedTime(chat.time)}
                 ></chat-msg-element>
                 ${chat.answers?.map(
                   (answers) =>
@@ -203,7 +197,7 @@ export class ChatRoomlement extends LitElement {
                       name=${answers.name}
                       image=${answers.image}
                       text=${answers.text}
-                      time=${answers.time}
+                      time=${this.getFormattedTime(answers.time)}
                     ></chat-msg-element>`
                 )} `;
             })}
