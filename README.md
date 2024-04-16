@@ -1,4 +1,4 @@
-# Chat Bot Assessment 
+# Chat Bot - Assignment 
 
 Your challenge is to build a very simple chat bot web app.
 
