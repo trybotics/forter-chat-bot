@@ -2,6 +2,26 @@
 
 Your challenge is to build a chatbot web app.
 
+## 👷‍♀️ TASK
+Implement a chat application where each user can post questions & answers in a chat room. We would also want for you to feature one  special member to that room - an awesome bot which should answer questions that were already answered before.
+
+## ⚙️ REQUIREMENTS
+- The application should be a single page which should focus on the chat room itself (no authentication, etc).
+- Use the following application skeleton based on node.js and lit. You are allowed to use any additional libraries.
+
+## ❗ PAY ATTENTION TO
+Your challenge is to implement the above while thinking of the following:
+- 🤖 Core functionality - This is what the task is all about! Making a chat room with a bot. Remember how it must be able to answer questions which were already answered.
+- 🎨 Beautiful UI - Impress us with a breathtaking UI, you are welcome to use any library you want. We recommend checking Dribbble and Codepen as well as taking inspiration from everyday chats apps.
+- 🧱 Code Structure & Edge Cases - Think of how to structure the code so it would be robust and that you will be proud to present to us.
+
+
+
+## 💰 BONUS
+- Use ElasticSearch as a database and use smarter queries to find better matches for similar questions that were answered before. 
+- We would appreciate a bot with an attitude - one that could make others laugh - an entertaining AI experience.
+- Creativity & Microinteractions - Think which features would enhance the users’ stay on the website and what microinteraction gestures could help.
+
 The full challenge description can be found [here](https://docs.google.com/document/d/1g9d3-i1bCUSCMYMcodb_YKX6J8K2QmeVT4S4qUyeZH8/edit?usp=sharing)
 
 # Setup
