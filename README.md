@@ -1,6 +1,6 @@
-# Chat Bot - Assignment 
+# Create a chatbot for the assignment.
 
-Your challenge is to build a very simple chat bot web app.
+Your challenge is to build a chatbot web app.
 
 The full challenge description can be found [here](https://docs.google.com/document/d/1g9d3-i1bCUSCMYMcodb_YKX6J8K2QmeVT4S4qUyeZH8/edit?usp=sharing)
 
