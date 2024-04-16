@@ -1,4 +1,4 @@
-# Forter Chat Bot Assessment 
+# Chat Bot Assessment 
 
 Your challenge is to build a very simple chat bot web app.
 
@@ -19,18 +19,18 @@ To start the client/frontend in development mode, execute the following command 
 ```
 npm serve
 ```
-The API will run on http://localhost:8000.
+The frontend app will run on http://localhost:8000.
 
 ## Start the server/backend
 To run the server/backend in development mode, execute the following command from the server directory:
 ```
 npm start:dev
 ```
-The API will run on http://localhost:3000.
+The backend API will run on http://localhost:3000.
 
 
-## Demo Videos
-Check out the project demo videos:
+## Solution Demo Videos
+Video showcasing our assessment solution:
 - [Part 1](https://www.loom.com/share/0d2cf7193f854d1f8a3789fe184015cb?sid=2d61b608-576d-4272-8231-401e50133b4c)
 - [Part 2](https://www.loom.com/share/e90f0d57295645efa769c21caafc65c7?sid=e4fa50ff-fe08-4245-9f99-84b169f429d2)
 - [Part 3](https://www.loom.com/share/6bb4fda6cac745e58e033c22bf5a4092?sid=d9b81d9e-d5e0-48c7-af1e-5015d16bd71e)
