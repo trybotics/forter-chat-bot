@@ -48,9 +48,14 @@ npm start:dev
 ```
 The backend API will run on http://localhost:3000.
 
-
 ## Demo videos for assignment solution
 Video showcasing our assignment solution:
 - [Part 1](https://www.loom.com/share/0d2cf7193f854d1f8a3789fe184015cb?sid=2d61b608-576d-4272-8231-401e50133b4c)
 - [Part 2](https://www.loom.com/share/e90f0d57295645efa769c21caafc65c7?sid=e4fa50ff-fe08-4245-9f99-84b169f429d2)
 - [Part 3](https://www.loom.com/share/6bb4fda6cac745e58e033c22bf5a4092?sid=d9b81d9e-d5e0-48c7-af1e-5015d16bd71e)
+
+## Some Screenshots:
+![image](https://github.com/trybotics/forter-chat-bot/assets/22857102/e50cefd1-7a0f-4423-915b-9113b596492b)
+![image](https://github.com/trybotics/forter-chat-bot/assets/22857102/9489ce9b-e132-4195-afe4-8f2b7bc9af35)
+![image](https://github.com/trybotics/forter-chat-bot/assets/22857102/2de396ff-ade8-4dd3-83e2-30bfa3711958)
+![image](https://github.com/trybotics/forter-chat-bot/assets/22857102/1cd93a1e-7264-4052-97fb-932d7c2c57ce)
